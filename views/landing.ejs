@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password manager</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+
+      <div class="login-box"> <!--Login box starting-->
+        <div class="login-header"> <!--start of header-->
+          <h2>Password Manager</h2>
+        </div> <!--end of header -->
+        <div class="loginButtons">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#SignInModal"> <!--Start of button for Log In modal-->
+            Log In
+          </button> <!-- end of button for log in modal-->
+  
+          <!--Sign in modal begines-->
+          <div class="modal fade" id="SignInModal" tabindex="-1" role="dialog" aria-labelledby="SignInModalLabel" aria-hidden="true">
+  
+            <div class="modal-dialog"><!-- dialog box for modal begines -->
+  
+              <div class="modal-content"> <!--Content for modal begins-->
+  
+                <div class="modal-header"><!-- header for modal begins-->
+  
+                  <h5 class="modal-title" id="SignInModalLabel">Log In</h5>
+  
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  
+                    <span aria-hidden="true">&times;</span>
+  
+                  </button>
+  
+                </div><!-- header for modal ends -->
+  
+                <div class="modal-body"><!-- body for modal begins-->
+  
+                  <form action="/user/signin" method="POST"><!-- Sign in form ends-->
+  
+                    <div class="form-group">
+                      <label for="username">Username:</label>
+                      <input type="text" name="username" id="username" class="form-control">
+                    </div>
+  
+                    <div class="form-group">
+                      <label for="password">Password:</label>
+                      <input type="password" name="password" id="password" class="form-control">
+                    </div>
+  
+                </div><!-- Body for modal ends-->
+  
+                <div class="modal-footer"><!-- Modal footer begins-->
+                  
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  
+                  <input type="submit" value="Log in" class="btn btn-primary" name="signin">
+  
+                </form> <!-- sign in form ends-->
+  
+                </div> <!-- modal footer ends-->
+  
+              </div> <!-- Content for modal ends-->
+  
+            </div> <!-- Dialog box for modal ends-->
+  
+          </div>
+          <!--Sign in modal ends-->
+  
+  
+  
+  
+          <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+          <div id="signUpModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="signUpModalTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="signUpModalTitle">Sign Up</h5>
+                  <button class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form method="post" action="/user/signup">
+                    <div class="form-group">
+                      <label for="username">Username:</label>
+                      <input id="username" class="form-control" type="text" name="username">
+                    </div>
+  
+                    <div class="form-group">
+                      <label for="password">Password:</label>
+                      <input id="password" class="form-control" type="password" name="password">
+                    </div>
+                  
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" type="button">Close</button>
+                  <button class="btn btn-primary" type="submit">Sign Up</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Button triggers modal-->
+        
+
+
+
+        
+
+
+      </div> <!-- Login box ending-->
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

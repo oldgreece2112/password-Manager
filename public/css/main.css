@@ -1,0 +1,26 @@
+.login-box{
+    position: absolute;
+    top: 20px;
+    left: 35%;
+    width: 600px;
+    border: 1px solid black;
+    height: 250px;
+    border-radius: 5px;
+}
+
+.login-header{
+    background-color: #3498db;
+    color: white;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    border: 1px solid black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 20px 20px 0px 20px;
+    margin-bottom: 10px;
+}
+
+.loginButtons{
+    position: relative;
+    left: 35%;
+    top: 20%;
+}

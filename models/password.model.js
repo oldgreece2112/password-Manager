@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var passwordSchema = new mongoose.Schema({
-    website: String,
+    url: String,
     username: String,
     password: String
 });

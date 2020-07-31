@@ -1,0 +1,35 @@
+<%- include("./partials/header") %>
+    <form action="user/settings" method="post">
+        <div class="form-group">
+            <label for="length">Password length:</label>
+            <input type="number" name="length" id="length" value="<%= user.settings.passwordLength %>">
+        </div>
+
+        <div class="form-group">
+            <label for="letters">Letters:</label>
+            <select name="letters" id="letters">
+                <option value="">Please select yes or no</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="numbers">Numbers:</label>
+            <select name="numbers" id="numbers">
+                <option value="">Please select yes or no</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="specialNumbers">Special Characters:</label>
+            <select name="specialCharacteres" id="specialCharacters">
+                <option value="">Please select yes or no</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+    </form>
+<%- include("./partials/footer") %>

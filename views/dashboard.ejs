@@ -1,0 +1,24 @@
+<%- include("./partials/header") %>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>URL</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%for(var x = 0; x < user.passwords.length;x++){%>
+                    <tr>
+                        <th><%= user.passwords[x]._id.toString() %></th>
+                        <td><%= user.passwords[x].url %></td>
+                        <td><%= user.passwords[x].username %></td>
+                        <td><%= passwords[x] %></td>
+                    </tr>
+                <%}%>
+            </tbody>
+        </table>
+    </div>
+<%- include("./partials/footer") %>

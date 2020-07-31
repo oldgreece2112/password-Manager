@@ -13,7 +13,7 @@ var userSchema = new mongoose.Schema({
     settings: {
         passwordLength: {
             type: Number,
-            default: 7
+            default: 8
         },
         letters: {
             type: Boolean,

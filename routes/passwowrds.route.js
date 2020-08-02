@@ -34,7 +34,8 @@ router.post("/create", function(req, res){
     var newPassword = {
         url: url,
         username: username,
-        password: password
+        password: password,
+        salt: crypto.randomBytes(16).toString()
     };
 
     User.findOne({username: req.user.username}, function(err, foundUser){
@@ -45,7 +46,7 @@ router.post("/create", function(req, res){
                 if(err){
                     console.log(err);
                 }else{
-                    var cipher = crypto.createCipher('aes128', foundUser._id.toString());
+                    var cipher = crypto.createCipher('aes128', newPassword.salt);
                     var encrypted = cipher.update(password, 'utf8', 'hex');
                     encrypted += cipher.final('hex');
                     newPassword.password = encrypted;

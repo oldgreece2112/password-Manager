@@ -12,8 +12,9 @@ router.get("/dashboard", function(req, res){
     var decrypted = Array();
     var decryptedPassword;
     User.findById(req.user._id).populate("passwords").exec(function(err, foundUser){
-        var decipher = crypto.createDecipher("aes128", foundUser._id.toString());
+        
         foundUser.passwords.forEach(function(password){
+            var decipher = crypto.createDecipher("aes128", password.salt);
             decryptedPassword = decipher.update(password.password, 'hex', 'utf8');
             decryptedPassword += decipher.final("utf8");
             decrypted.push(decryptedPassword);

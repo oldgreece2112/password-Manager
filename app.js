@@ -14,7 +14,7 @@ var passwordRoutes = require("./routes/passwowrds.route");
 
 var PORT = process.env.PORT || 8000;
 
-mongoose.connect("mongodb://localhost/passwords", {useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://user:UM8ttPVfqFhnnFKV@cluster0.ewyso.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", function(){

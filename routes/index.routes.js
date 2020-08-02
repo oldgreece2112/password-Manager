@@ -22,4 +22,57 @@ router.get("/dashboard", function(req, res){
     });
 });
 
+router.get("/settings", function(req, res){
+    User.findById(req.user._id, function(err, foundUser){
+        if(err){
+            console.log(err);
+        }else{
+            res.render("settings", {user: foundUser}
+            );
+        }
+    });
+});
+
+
+
+router.post("/settings", function(req, res){
+    var passwordLength = parseInt(req.body.length);
+
+    if(req.body.letters == 'true'){
+        var letters = true;
+    }else{
+        var letters = false;
+    }
+
+    if (req.body.numbers == 'true'){
+        var numbers = true;
+    }else{
+        var numbers = false;
+    }
+
+    if(req.body.specialCharacters == true){
+        var specialCharacters = true;
+    }else{
+        var specialCharacters = false;
+    }
+
+    var newsettings = {
+        passwordLength: passwordLength,
+        letters: letters,
+        numbers: numbers,
+        specialCharacters: specialCharacters
+    };
+
+    User.findById(req.user._id, function(err, foundUser){
+        if(err){
+            console.log(err);
+        }else{
+            foundUser.settings = newsettings;
+            foundUser.save();
+            console.log(foundUser);
+            res.redirect("/dashboard");
+        }
+    });
+});
+
 module.exports = router;

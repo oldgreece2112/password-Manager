@@ -1,35 +1,40 @@
 <%- include("./partials/header") %>
-    <form action="user/settings" method="post">
+<div class="container">
+    <form action="/settings" method="post">
         <div class="form-group">
             <label for="length">Password length:</label>
-            <input type="number" name="length" id="length" value="<%= user.settings.passwordLength %>">
+            <input class="form-control" type="number" name="length" id="length" value="<%= user.settings.passwordLength %>">
         </div>
 
         <div class="form-group">
             <label for="letters">Letters:</label>
-            <select name="letters" id="letters">
+            <select name="letters" id="letters" class="form-control">
                 <option value="">Please select yes or no</option>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
+                <option value="true" <% if (user.settings.letters == true){%>selected <% } %>>Yes</option>
+                <option value="false" <% if (user.settings.letters == false){%>selected <% } %>>No</option>
             </select>
         </div>
 
         <div class="form-group">
             <label for="numbers">Numbers:</label>
-            <select name="numbers" id="numbers">
+            <select class="form-control" name="numbers" id="numbers">
                 <option value="">Please select yes or no</option>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
+                <option value="true" <% if (user.settings.numbers == true){%>selected <% } %>>Yes</option>
+                <option value="false" <% if (user.settings.numbers == false){%> selected <% } %>>No</option>
             </select>
         </div>
 
         <div class="form-group">
             <label for="specialNumbers">Special Characters:</label>
-            <select name="specialCharacteres" id="specialCharacters">
+            <select class="form-control" name="specialCharacters" id="specialCharacters">
                 <option value="">Please select yes or no</option>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
+                <option value="true" <% if (user.settings.specialCharacters == true){%>selected <% } %>>Yes</option>
+                <option value="false" <% if (user.settings.specialCharacters == false){%> selected <% } %>>No</option>
             </select>
         </div>
+        <br>
+        <br>
+        <button class="btn btn-primary float-right" type="submit">Save Settings</button>
     </form>
+</div>
 <%- include("./partials/footer") %>

@@ -7,6 +7,7 @@
                     <th>URL</th>
                     <th>Username</th>
                     <th>Password</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -16,6 +17,7 @@
                         <td><%= user.passwords[x].url %></td>
                         <td><%= user.passwords[x].username %></td>
                         <td><%= passwords[x] %></td>
+                        <td><a href="password/delete/<%= user.passwords[x]._id %>" class="btn btn-danger">Delete</a></td>
                     </tr>
                 <%}%>
             </tbody>

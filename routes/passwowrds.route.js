@@ -61,6 +61,17 @@ router.post("/create", function(req, res){
         }
     });
 
+    router.get("/delete/:id", function(req, res){
+        var id = req.params.id;
+        Password.findByIdAndDelete(id, function(err, deletePassword){
+            if(err){
+                console.log(err);
+            }else{
+                res.redirect("/dashboard");
+            }
+        });
+    });
+
     
 });
 

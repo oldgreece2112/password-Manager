@@ -10,12 +10,6 @@ var userSchema = new mongoose.Schema({
             ref: "Password"
         }
     ],
-    notes: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Note"
-        }
-    ],
     settings: {
         passwordLength: {
             type: Number,
